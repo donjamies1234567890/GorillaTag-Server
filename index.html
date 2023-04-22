@@ -14,8 +14,7 @@
     <div id="dosbox-container"></div>
     <script src="js-dos-api.js"></script>
     <script>
-        var gameFileUrl = 'https://gorillatag-server.pages.dev/DOOM.zip';
-        var dosbox = new Dosbox({
+        dosbox.run("DOOM.zip", "./DOOM");
             id: "dosbox-container",
             onrun: function (dosbox, app) {
                 console.log("App '" + app + "' is running");
