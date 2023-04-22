@@ -14,9 +14,11 @@
     <div id="dosbox-container"></div>
     <script src="js-dos-api.js"></script>
     <script>
-        dosbox.run("DOOM.zip", "./DOOM");
-            id: "dosbox-container",
-            onrun: function (dosbox, app) {
+        var dosbox = new Dosbox({
+20         id: "dosbox",
+21         onload: function (dosbox) {
+22           dosbox.run("/DOOM.zip", "./doom");
+23         },
                 console.log("App '" + app + "' is running");
             }
         });
