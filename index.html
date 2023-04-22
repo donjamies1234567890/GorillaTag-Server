@@ -1,1 +1,27 @@
-WELCOME TO GORILLA TAG! HEAD OUTSIDE TO AUTOMATICALLY JOIN A PUBLIC GAME, OR USE THE TERMINAL TO JOIN A SPECIFIC ROOM OR ADJUST YOUR SETTINGS.
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Play Doom in HTML</title>
+    <style>
+        #dosbox-container {
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <div id="dosbox-container"></div>
+    <script src="js-dos-api.js"></script>
+    <script>
+        var gameFileUrl = 'https://gorillatag-server.pages.dev/DOOM.zip';
+        var dosbox = new Dosbox({
+            id: "dosbox-container",
+            onrun: function (dosbox, app) {
+                console.log("App '" + app + "' is running");
+            }
+        });
+        dosbox.run(gameFileUrl, "-file " + gameFileUrl, "Fullscreen");
+    </script>
+</body>
+</html>
